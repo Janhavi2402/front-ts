@@ -124,7 +124,7 @@ const Section = styled.section`
       }
 
       img {
-       
+        
         width: 100%;
         height: 100%;
         object-fit: fit; /* Ensure the image covers the container */
@@ -135,7 +135,7 @@ const Section = styled.section`
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: white;
+        color:white;
         font-size: 1.5rem;
         font-weight: bold;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);

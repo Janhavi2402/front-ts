@@ -76,7 +76,7 @@ export default function Navbar() {
     <>
       <nav style={navStyle}>
         <div style={brandStyle}>
-          <img src={logo} alt="" />
+        <img  src={logo} alt="Logo" />
           TEERTH-SAARTHI
           <div>
             {navbarState ? (
