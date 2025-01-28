@@ -15,7 +15,7 @@ export default function Navbar() {
   const brandStyle = {
     display: "flex",
     alignItems: "center",
-    gap: "0.4rem",
+    gap: "0.6rem",
     fontSize: "1.2rem",
     fontWeight: "900",
     textTransform: "uppercase",
@@ -42,6 +42,7 @@ export default function Navbar() {
   };
 
   const buttonStyle = {
+    margin: "0.5rem 0.5rem",
     padding: "0.5rem 1rem",
     cursor: "pointer",
     borderRadius: "1rem",
@@ -107,20 +108,34 @@ export default function Navbar() {
             </a>
           </li>
         </ul>
+        <div style={{ display: "flex", gap: "0.5rem" }}>
         <button
-          style={buttonStyle}
-          onMouseOver={(e) => (e.target.style.backgroundColor = "#023e8a")}
-          onMouseOut={(e) => (e.target.style.backgroundColor = "#48cae4")}
-        >
-          Sign in 
-        </button>
-        <button
-          style={buttonStyle}
-          onMouseOver={(e) => (e.target.style.backgroundColor = "#023e8a")}
-          onMouseOut={(e) => (e.target.style.backgroundColor = "#48cae4")}
-        >
-          Sign up
-        </button>
+  style={buttonStyle}
+  onMouseOver={(e) => {
+    e.target.style.backgroundColor = "#023e8a";
+    e.target.style.transform = "scale(1.1) translateY(-5px)";
+  }}
+  onMouseOut={(e) => {
+    e.target.style.backgroundColor = "#48cae4";
+    e.target.style.transform = "scale(1) translateY(0)";
+  }}
+>
+  Sign in
+</button>
+<button
+  style={buttonStyle}
+  onMouseOver={(e) => {
+    e.target.style.backgroundColor = "#023e8a";
+    e.target.style.transform = "scale(1.1) translateY(-5px)";
+  }}
+  onMouseOut={(e) => {
+    e.target.style.backgroundColor = "#48cae4";
+    e.target.style.transform = "scale(1) translateY(0)";
+  }}
+>
+  Sign up
+</button>
+        </div>
       </nav>
       <div style={responsiveNavStyle}>
         <ul style={responsiveUlStyle}>
