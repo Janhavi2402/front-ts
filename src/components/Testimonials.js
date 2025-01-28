@@ -1,26 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import avatarImage from "../assets/avatarImage.jpeg";
+import { FaUserAlt } from "react-icons/fa"; // Human icon from React Icons
 
 export default function Testimonials() {
   const testimonialsData = [
     {
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores eaque.",
-      name: "Kishan Sheth",
-      role: "CEO - Shashaan Web Solutions",
-      avatar: avatarImage,
+      text: "This website has been a game changer for planning our spiritual journeys! 🙏✨ The insights and resources have helped us explore sacred sites like never before. Highly recommended! 🌍",
+      name: "Priya Desai",
+      role: "Traveler",
     },
     {
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores eaque.",
-      name: "Kishan Sheth",
-      role: "CEO - Shashaan Web Solutions",
-      avatar: avatarImage,
+      text: "I absolutely love how easy it is to discover new places of worship and spiritual significance. This site is a true blessing for anyone looking to deepen their faith through travel. 🙌💖",
+      name: "Ravi Kumar",
+      role: "Spiritual Explorer",
     },
     {
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores eaque.",
-      name: "Kishan Sheth",
-      role: "CEO - Shashaan Web Solutions",
-      avatar: avatarImage,
+      text: "An incredible platform for discovering holy sites across different religions. The information is both educational and enriching, helping me understand diverse spiritual practices. 🕉️✨",
+      name: "Amina Fatima",
+      role: "Cultural Enthusiast",
     },
   ];
 
@@ -34,7 +31,7 @@ export default function Testimonials() {
           <div className="testimonial" key={index}>
             <p>{testimonial.text}</p>
             <div className="info">
-              <img src={testimonial.avatar} alt={testimonial.name} />
+              <FaUserAlt size={40} /> {/* Human icon instead of photo */}
               <div className="details">
                 <h4>{testimonial.name}</h4>
                 <span>{testimonial.role}</span>
@@ -74,9 +71,10 @@ const Section = styled.section`
         gap: 1rem;
         align-items: center;
         margin-top: 1rem;
-        img {
-          border-radius: 3rem;
-          height: 3rem;
+        svg {
+          border-radius: 50%;
+          background-color: lightgray;
+          padding: 0.5rem;
         }
         .details {
           span {
