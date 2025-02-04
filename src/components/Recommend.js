@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
+import { useNavigate } from "react-router-dom"; // For navigation
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -14,17 +15,23 @@ import buddhism from "../assets/buddhism.jpg";
 import sikhism from "../assets/sikhism.jpg";
 
 export default function Recommend() {
+  const navigate = useNavigate(); // Hook for navigation
+
   const data = [
-    { image: hinduism, title: "Hinduism" },
-    { image: christian, title: "Christianity" },
-    { image: islam, title: "Islam" },
-    { image: buddhism, title: "Buddhism" },
-    { image: jainism, title: "Jainism" },
-    { image: sikhism, title: "Sikhism" },
+    { image: hinduism, title: "Hinduism", route: "/religion/hinduism" },
+    { image: christian, title: "Christianity", route: "/religion/christianity" },
+    { image: islam, title: "Islam", route: "/religion/islam" },
+    { image: buddhism, title: "Buddhism", route: "/religion/buddhism" },
+    { image: jainism, title: "Jainism", route: "/religion/jainism" },
+    { image: sikhism, title: "Sikhism", route: "/religion/sikhism" },
   ];
 
   const packages = ["Choose Religion", "Famous places"];
   const [active, setActive] = useState(1);
+
+  const handleCardClick = (route) => {
+    navigate(route); // Navigate to the selected religion's page
+  };
 
   return (
     <Section id="recommend">
@@ -46,20 +53,23 @@ export default function Recommend() {
       </div>
       <div className="destinations">
         <Swiper
-           spaceBetween={10} // Reduced space between slides
-           slidesPerView={3}
-           pagination={{ clickable: true }}
-           navigation={true}
-           modules={[Pagination, Navigation]}
-           breakpoints={{
-             280: { slidesPerView: 1, spaceBetween: 5 }, // Smaller screens
-             768: { slidesPerView: 2, spaceBetween: 10 }, // Medium screens
-             1024: { slidesPerView: 3, spaceBetween: 10 }, // Larger screens
+          spaceBetween={10}
+          slidesPerView={3}
+          pagination={{ clickable: true }}
+          navigation={true}
+          modules={[Pagination, Navigation]}
+          breakpoints={{
+            280: { slidesPerView: 1, spaceBetween: 5 },
+            768: { slidesPerView: 2, spaceBetween: 10 },
+            1024: { slidesPerView: 3, spaceBetween: 10 },
           }}
         >
           {data.map((destination, index) => (
             <SwiperSlide key={index}>
-              <div className="destination">
+              <div
+                className="destination"
+                onClick={() => handleCardClick(destination.route)}
+              >
                 <img src={destination.image} alt={destination.title} />
                 <h3>{destination.title}</h3>
               </div>
