@@ -12,7 +12,6 @@ export default function ReligionPage() {
     "Madhya Pradesh",
     "Rajasthan",
     "Tamil Nadu",
-    "Kerala",
   ];
 
   const handleStateClick = (state) => {
@@ -21,14 +20,19 @@ export default function ReligionPage() {
 
   return (
     <div>
-      <h1>{religion.toUpperCase()}</h1>
-      <ul>
+      <h1 className="font-bold text-center text-3xl mb-6">{religion.toUpperCase()}</h1>
+      
+      <div className="flex flex-wrap gap-8 justify-center mt-9">
         {states.map((state, index) => (
-          <li key={index} onClick={() => handleStateClick(state)} style={{ cursor: "pointer", color: "blue" }}>
-            {state}
-          </li>
+          <div
+            key={index}
+            className="bg-blue-500 text-white p-6 rounded-lg w-1/4 cursor-pointer hover:bg-blue-700 transition-colors h-80 shadow-lg hover:shadow-xl"
+            onClick={() => handleStateClick(state)}
+          >
+            <h2 className="text-center text-xl">{state}</h2>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

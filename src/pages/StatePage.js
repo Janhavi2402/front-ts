@@ -8,6 +8,9 @@ export default function StatePage() {
     <div>
       <h1>{state.replace(/-/g, " ").toUpperCase()}</h1>
       <p>Information about {state.replace(/-/g, " ")} in {religion.toUpperCase()} will be displayed here.</p>
+
+
+     
     </div>
   );
 }
