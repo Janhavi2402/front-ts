@@ -39,19 +39,6 @@ export default function ReligionPage() {
   };
 
   return (
-<<<<<<< HEAD
-    <div>
-      <h1 className="font-bold text-center text-3xl mb-6">{religion.toUpperCase()}</h1>
-      
-      <div className="flex flex-wrap gap-8 justify-center mt-9">
-        {states.map((state, index) => (
-          <div
-            key={index}
-            className="bg-blue-500 text-white p-6 rounded-lg w-1/4 cursor-pointer hover:bg-blue-700 transition-colors h-80 shadow-lg hover:shadow-xl"
-            onClick={() => handleStateClick(state)}
-          >
-            <h2 className="text-center text-xl">{state}</h2>
-=======
     <div className="container mx-auto p-6">
       {/* Religion Banner */}
       <div className="w-full mb-8">
@@ -81,7 +68,6 @@ export default function ReligionPage() {
             <div className="p-4">
               <h2 className="text-lg font-semibold text-center">{state}</h2>
             </div>
->>>>>>> cf072b81a8ce359c359019211afcfbae638eaa15
           </div>
         ))}
       </div>
