@@ -1,24 +1,33 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-// Replace with actual state-related images
+// Import Jainism state images
+import jainGujarat from "../assets/jain_images/jain_gujarat.jpg";
+import jainMP from "../assets/jain_images/jain_mp.jpg";
+import jainRajasthan from "../assets/jain_images/jain_raj.jpeg";
+import jainTamilNadu from "../assets/jain_images/jain_tn.jpg";
+import jainUttarPradesh from "../assets/jain_images/jain_up.png";
+import jainUttarakhand from "../assets/jain_images/jain_uttarakhand.jpg";
+import jainismMainImage from "../assets/jain_images/jainism_main.jpg"; // Jainism banner image
+
+// State images object
 const stateImages = {
-  "Uttar Pradesh": "https://example.com/uttar-pradesh.jpg",
-  "Uttarakhand": "https://example.com/uttarakhand.jpg",
-  Gujarat: "https://example.com/gujarat.jpg",
-  "Madhya Pradesh": "https://example.com/madhya-pradesh.jpg",
-  Rajasthan: "https://example.com/rajasthan.jpg",
-  "Tamil Nadu": "https://example.com/tamil-nadu.jpg",
-  Kerala: "https://example.com/kerala.jpg",
+  "Uttar Pradesh": jainUttarPradesh,
+  "Uttarakhand": jainUttarakhand,
+  Gujarat: jainGujarat,
+  "Madhya Pradesh": jainMP,
+  Rajasthan: jainRajasthan,
+  "Tamil Nadu": jainTamilNadu,
 };
 
+// Religion images object
 const religionImages = {
   hinduism: "https://example.com/hinduism-banner.jpg",
   islam: "https://example.com/islam-banner.jpg",
   christianity: "https://example.com/christianity-banner.jpg",
   sikhism: "https://example.com/sikhism-banner.jpg",
   buddhism: "https://example.com/buddhism-banner.jpg",
-  jainism: "https://example.com/jainism-banner.jpg",
+  jainism: jainismMainImage, // Jainism main banner
 };
 
 export default function ReligionPage() {
